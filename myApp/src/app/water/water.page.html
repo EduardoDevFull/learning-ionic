@@ -5,25 +5,31 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" class="water-content">
-  <div
-    class="ring"
-    [style.background]="'conic-gradient(var(--ring-color) ' + percent() + '%, var(--ring-track) 0)'"
-  >
-    <div class="ring-inner">
-      <ion-icon name="water-outline"></ion-icon>
-      <span class="cups">{{ cups() }}<small>/{{ goal }}</small></span>
-      <span class="label">cups today</span>
+  <div class="page">
+    <div class="stats">
+      <div class="amount">
+        <span class="value">{{ cups() }}</span>
+        <span class="unit">/{{ goal }} copos</span>
+      </div>
+
+      <div class="goal-card">
+        <ion-icon name="flag-outline"></ion-icon>
+        <span>Meta: {{ goal }} copos · {{ percent() }}%</span>
+      </div>
+    </div>
+
+    <div class="sea" [style.height.%]="seaHeight()"></div>
+
+    <div class="actions">
+      <ion-button
+        expand="block"
+        shape="round"
+        class="drink-btn"
+        (click)="addCup()"
+      >
+        <ion-icon slot="start" name="add-outline"></ion-icon>
+        Beber um copo
+      </ion-button>
     </div>
   </div>
-
-  <div class="actions">
-    <ion-button shape="round" fill="outline" (click)="removeCup()">
-      <ion-icon slot="icon-only" name="remove-outline"></ion-icon>
-    </ion-button>
-    <ion-button shape="round" (click)="addCup()">
-      <ion-icon slot="icon-only" name="add-outline"></ion-icon>
-    </ion-button>
-  </div>
-
-  <p class="percent">{{ percent() }}% of goal</p>
 </ion-content>

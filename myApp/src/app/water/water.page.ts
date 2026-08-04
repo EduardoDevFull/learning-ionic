@@ -8,7 +8,7 @@ import {
   IonIcon,
 } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { addOutline, removeOutline, waterOutline } from 'ionicons/icons';
+import { addOutline, flagOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-water',
@@ -25,8 +25,11 @@ export class WaterPage {
     Math.min(100, Math.round((this.cups() / this.goal) * 100)),
   );
 
+  // Keeps the sea visible even at 0 cups, like the reference design.
+  seaHeight = computed(() => Math.max(14, this.percent()));
+
   constructor() {
-    addIcons({ addOutline, removeOutline, waterOutline });
+    addIcons({ addOutline, flagOutline });
   }
 
   addCup() {
