@@ -14,7 +14,8 @@ export const routes: Routes = [
       },
       {
         path: 'water',
-        loadComponent: () => import('./water/water.page').then((m) => m.WaterPage),
+        loadComponent: () =>
+          import('./water/water.page').then((m) => m.WaterPage),
       },
       {
         path: '',
@@ -27,9 +28,5 @@ export const routes: Routes = [
     path: '',
     redirectTo: 'tabs',
     pathMatch: 'full',
-  },
-  {
-    path: 'welcome',
-    loadComponent: () => import('./welcome/welcome.page').then( m => m.WelcomePage)
   },
 ];
