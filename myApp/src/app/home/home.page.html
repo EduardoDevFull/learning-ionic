@@ -4,10 +4,54 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="home-content">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Bloom </ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <div class="greeting">
+    <h1>Recomendações diárias</h1>
+    <p>Para você se sentir bem hoje.</p>
+  </div>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <ion-card color="secondary">
+          <ion-card-content>
+            <ion-icon name="water-outline"></ion-icon>
+            <div class="card-label">Água</div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card color="primary">
+          <ion-card-content>
+            <ion-icon name="leaf-outline"></ion-icon>
+            <div class="card-label">Respiração</div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">
+        <ion-card color="tertiary">
+          <ion-card-content>
+            <ion-icon name="moon-outline"></ion-icon>
+            <div class="card-label">Meditação</div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card>
+          <ion-card-content>
+            <ion-icon name="musical-notes-outline"></ion-icon>
+            <div class="card-label">Sons</div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
