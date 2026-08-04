@@ -1,21 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { Component } from '@angular/core';
 import {
-  IonContent,
-  IonHeader,
   IonIcon,
-  IonTab,
+  IonLabel,
+  IonRouterOutlet,
   IonTabBar,
   IonTabButton,
   IonTabs,
-  IonTitle,
-  IonToolbar,
 } from '@ionic/angular/standalone';
 
-import { library, playCircle, waterOutline, search } from 'ionicons/icons';
+import { playCircle, waterOutline } from 'ionicons/icons';
 import { addIcons } from 'ionicons';
-import { WaterPage } from '../water/water.page';
 
 @Component({
   selector: 'tabs-navigation',
@@ -23,24 +17,16 @@ import { WaterPage } from '../water/water.page';
   styleUrls: ['./tabs-navigation.page.scss'],
   standalone: true,
   imports: [
-    IonContent,
-    IonHeader,
-    IonTitle,
-    IonToolbar,
-    CommonModule,
-    FormsModule,
     IonIcon,
-    IonTab,
+    IonLabel,
+    IonRouterOutlet,
     IonTabBar,
     IonTabButton,
     IonTabs,
-    WaterPage,
   ],
 })
-export class TabsNavigationPage implements OnInit {
+export class TabsNavigationPage {
   constructor() {
-    addIcons({ library, playCircle, waterOutline, search });
+    addIcons({ playCircle, waterOutline });
   }
-
-  ngOnInit() {}
 }

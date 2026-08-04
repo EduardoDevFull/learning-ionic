@@ -4,8 +4,6 @@ import {
   IonToolbar,
   IonTitle,
   IonContent,
-  IonButtons,
-  IonBackButton,
   IonButton,
   IonIcon,
 } from '@ionic/angular/standalone';
@@ -17,16 +15,7 @@ import { addOutline, removeOutline, waterOutline } from 'ionicons/icons';
   templateUrl: './water.page.html',
   styleUrls: ['./water.page.scss'],
   standalone: true,
-  imports: [
-    IonHeader,
-    IonToolbar,
-    IonTitle,
-    IonContent,
-    IonButtons,
-    IonBackButton,
-    IonButton,
-    IonIcon,
-  ],
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonIcon],
 })
 export class WaterPage {
   goal = 8;
