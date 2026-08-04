@@ -14,4 +14,11 @@ export const routes: Routes = [
     path: 'water',
     loadComponent: () => import('./water/water.page').then((m) => m.WaterPage),
   },
+  {
+    path: 'tabs-navigation',
+    loadComponent: () =>
+      import('./tabs-navigation/tabs-navigation.page').then(
+        (m) => m.TabsNavigationPage,
+      ),
+  },
 ];
