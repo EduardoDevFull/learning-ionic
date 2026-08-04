@@ -1,0 +1,10 @@
+<ion-card
+  [color]="color"
+  [button]="!!routerLink"
+  [routerLink]="routerLink ?? null"
+>
+  <ion-card-content>
+    <ion-icon [name]="icon"></ion-icon>
+    <div class="card-label">{{ label }}</div>
+  </ion-card-content>
+</ion-card>

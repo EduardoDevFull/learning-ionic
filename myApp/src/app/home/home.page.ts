@@ -1,16 +1,12 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import {
   IonHeader,
   IonToolbar,
   IonTitle,
   IonContent,
-  IonIcon,
   IonGrid,
   IonRow,
   IonCol,
-  IonCard,
-  IonCardContent,
 } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import {
@@ -19,6 +15,14 @@ import {
   musicalNotesOutline,
   waterOutline,
 } from 'ionicons/icons';
+import { QuickActionCardComponent } from '../components/quick-action-card/quick-action-card.component';
+
+interface QuickAction {
+  icon: string;
+  label: string;
+  color?: string;
+  routerLink?: string;
+}
 
 @Component({
   selector: 'app-home',
@@ -29,16 +33,24 @@ import {
     IonToolbar,
     IonTitle,
     IonContent,
-    IonIcon,
     IonGrid,
     IonRow,
     IonCol,
-    IonCard,
-    IonCardContent,
-    RouterLink,
+    QuickActionCardComponent,
   ],
 })
 export class HomePage {
+  quickActions: QuickAction[] = [
+    {
+      icon: 'water-outline',
+      label: 'Água',
+      color: 'secondary',
+    },
+    { icon: 'leaf-outline', label: 'Respiração', color: 'primary' },
+    { icon: 'moon-outline', label: 'Meditação', color: 'tertiary' },
+    { icon: 'musical-notes-outline', label: 'Sons' },
+  ];
+
   constructor() {
     addIcons({ waterOutline, leafOutline, moonOutline, musicalNotesOutline });
   }
