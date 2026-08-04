@@ -1,2 +1,64 @@
 // For information on how to create your own theme, please refer to:
 // https://ionicframework.com/docs/theming/
+
+:root {
+  /** primary - soft sage **/
+  --ion-color-primary: #9cc5ae;
+  --ion-color-primary-rgb: 156, 197, 174;
+  --ion-color-primary-contrast: #1f3a2e;
+  --ion-color-primary-contrast-rgb: 31, 58, 46;
+  --ion-color-primary-shade: #89ad9a;
+  --ion-color-primary-tint: #aad0bc;
+
+  /** secondary - powder blue **/
+  --ion-color-secondary: #a9d6e5;
+  --ion-color-secondary-rgb: 169, 214, 229;
+  --ion-color-secondary-contrast: #12303a;
+  --ion-color-secondary-contrast-rgb: 18, 48, 58;
+  --ion-color-secondary-shade: #93bcc9;
+  --ion-color-secondary-tint: #badeea;
+
+  /** tertiary - soft peach (accent / CTA) **/
+  --ion-color-tertiary: #ffcbb6;
+  --ion-color-tertiary-rgb: 255, 203, 182;
+  --ion-color-tertiary-contrast: #4a2a1e;
+  --ion-color-tertiary-contrast-rgb: 74, 42, 30;
+  --ion-color-tertiary-shade: #e0b3a0;
+  --ion-color-tertiary-tint: #ffd8c7;
+
+  /** background and text **/
+  --ion-background-color: #ffffff;
+  --ion-background-color-rgb: 255, 255, 255;
+  --ion-text-color: #4a5751;
+  --ion-text-color-rgb: 74, 87, 81;
+
+  /** surface (cards) **/
+  --app-surface: #f1f7f3;
+}
+
+.ion-color-primary {
+  --ion-color-base: var(--ion-color-primary);
+  --ion-color-base-rgb: var(--ion-color-primary-rgb);
+  --ion-color-contrast: var(--ion-color-primary-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-primary-contrast-rgb);
+  --ion-color-shade: var(--ion-color-primary-shade);
+  --ion-color-tint: var(--ion-color-primary-tint);
+}
+
+.ion-color-secondary {
+  --ion-color-base: var(--ion-color-secondary);
+  --ion-color-base-rgb: var(--ion-color-secondary-rgb);
+  --ion-color-contrast: var(--ion-color-secondary-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-secondary-contrast-rgb);
+  --ion-color-shade: var(--ion-color-secondary-shade);
+  --ion-color-tint: var(--ion-color-secondary-tint);
+}
+
+.ion-color-tertiary {
+  --ion-color-base: var(--ion-color-tertiary);
+  --ion-color-base-rgb: var(--ion-color-tertiary-rgb);
+  --ion-color-contrast: var(--ion-color-tertiary-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-tertiary-contrast-rgb);
+  --ion-color-shade: var(--ion-color-tertiary-shade);
+  --ion-color-tint: var(--ion-color-tertiary-tint);
+}
