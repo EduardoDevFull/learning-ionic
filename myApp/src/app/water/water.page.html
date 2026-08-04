@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Water</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="water-content">
+  <div
+    class="ring"
+    [style.background]="'conic-gradient(var(--ring-color) ' + percent() + '%, var(--ring-track) 0)'"
+  >
+    <div class="ring-inner">
+      <ion-icon name="water-outline"></ion-icon>
+      <span class="cups">{{ cups() }}<small>/{{ goal }}</small></span>
+      <span class="label">cups today</span>
+    </div>
+  </div>
+
+  <div class="actions">
+    <ion-button shape="round" fill="outline" (click)="removeCup()">
+      <ion-icon slot="icon-only" name="remove-outline"></ion-icon>
+    </ion-button>
+    <ion-button shape="round" (click)="addCup()">
+      <ion-icon slot="icon-only" name="add-outline"></ion-icon>
+    </ion-button>
+  </div>
+
+  <p class="percent">{{ percent() }}% of goal</p>
+</ion-content>

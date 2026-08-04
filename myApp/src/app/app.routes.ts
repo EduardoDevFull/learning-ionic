@@ -10,4 +10,12 @@ export const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full',
   },
+  {
+    path: 'new',
+    loadComponent: () => import('./new/new.page').then((m) => m.NewPage),
+  },
+  {
+    path: 'water',
+    loadComponent: () => import('./water/water.page').then((m) => m.WaterPage),
+  },
 ];
