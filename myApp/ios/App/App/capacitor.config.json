@@ -1,0 +1,11 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "myApp",
+	"webDir": "www",
+	"packageClassList": [
+		"AppPlugin",
+		"HapticsPlugin",
+		"KeyboardPlugin",
+		"StatusBarPlugin"
+	]
+}
