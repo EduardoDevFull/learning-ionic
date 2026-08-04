@@ -9,12 +9,12 @@
     <div class="stats">
       <div class="amount">
         <span class="value">{{ cups() }}</span>
-        <span class="unit">/{{ goal }} copos</span>
+        <span class="unit">/{{ goal }} cups</span>
       </div>
 
       <div class="goal-card">
         <ion-icon name="flag-outline"></ion-icon>
-        <span>Meta: {{ goal }} copos · {{ percent() }}%</span>
+        <span>Goal: {{ goal }} cups · {{ percent() }}%</span>
       </div>
     </div>
 
@@ -28,7 +28,7 @@
         (click)="addCup()"
       >
         <ion-icon slot="start" name="add-outline"></ion-icon>
-        Beber um copo
+        Drink a cup
       </ion-button>
     </div>
   </div>

@@ -35,3 +35,18 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 /* @import "@ionic/angular/css/palettes/dark.system.css"; */
+
+/**
+ * Ionic can render more than one `ion-router-outlet` element per nested
+ * `ion-tabs` (an outer full-screen one on top of the real, content-bearing
+ * one). The empty extra one still has `pointer-events: auto` by default and
+ * ends up swallowing clicks meant for the actual page underneath it. Only
+ * the outlet that actually holds a page should be clickable.
+ */
+ion-router-outlet {
+  pointer-events: none;
+}
+
+ion-router-outlet > * {
+  pointer-events: auto;
+}

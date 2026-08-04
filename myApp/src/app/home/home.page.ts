@@ -43,12 +43,13 @@ export class HomePage {
   quickActions: QuickAction[] = [
     {
       icon: 'water-outline',
-      label: 'Água',
+      label: 'Water',
       color: 'secondary',
+      routerLink: '/tabs/water',
     },
-    { icon: 'leaf-outline', label: 'Respiração', color: 'primary' },
-    { icon: 'moon-outline', label: 'Meditação', color: 'tertiary' },
-    { icon: 'musical-notes-outline', label: 'Sons' },
+    { icon: 'leaf-outline', label: 'Breathing', color: 'primary' },
+    { icon: 'moon-outline', label: 'Meditation', color: 'tertiary' },
+    { icon: 'musical-notes-outline', label: 'Sounds' },
   ];
 
   constructor() {
