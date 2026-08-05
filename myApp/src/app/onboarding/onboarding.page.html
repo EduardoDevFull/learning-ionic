@@ -1,0 +1,76 @@
+<ion-content [fullscreen]="true" class="onboarding-content">
+  <div class="wizard">
+    <div class="progress">
+      @for (i of [0, 1, 2]; track i) {
+        <span class="dot" [class.active]="i === step()" [class.done]="i < step()"></span>
+      }
+    </div>
+
+    @if (step() > 0) {
+      <ion-button fill="clear" class="back-btn" (click)="back()">
+        <ion-icon slot="icon-only" name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    }
+
+    @if (step() === 0) {
+      <div class="question">
+        <ion-icon name="barbell-outline"></ion-icon>
+        <h1>What's your weight?</h1>
+        <p>We use this to calculate your daily water goal.</p>
+        <div class="field">
+          <ion-input
+            type="number"
+            inputmode="decimal"
+            placeholder="70"
+            [(ngModel)]="weightKg"
+          ></ion-input>
+          <span class="unit">kg</span>
+        </div>
+      </div>
+    }
+
+    @if (step() === 1) {
+      <div class="question">
+        <ion-icon name="resize-outline"></ion-icon>
+        <h1>What's your height?</h1>
+        <p>This helps fine-tune your goal.</p>
+        <div class="field">
+          <ion-input
+            type="number"
+            inputmode="decimal"
+            placeholder="170"
+            [(ngModel)]="heightCm"
+          ></ion-input>
+          <span class="unit">cm</span>
+        </div>
+      </div>
+    }
+
+    @if (step() === 2) {
+      <div class="question">
+        <ion-icon name="calendar-outline"></ion-icon>
+        <h1>What's your age?</h1>
+        <p>Last step before we calculate your goal.</p>
+        <div class="field">
+          <ion-input
+            type="number"
+            inputmode="numeric"
+            placeholder="30"
+            [(ngModel)]="age"
+          ></ion-input>
+          <span class="unit">years</span>
+        </div>
+      </div>
+    }
+
+    <ion-button
+      expand="block"
+      shape="round"
+      class="next-btn"
+      [disabled]="!canAdvance"
+      (click)="next()"
+    >
+      {{ isLastStep ? 'Finish' : 'Next' }}
+    </ion-button>
+  </div>
+</ion-content>

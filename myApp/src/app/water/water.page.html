@@ -9,12 +9,12 @@
     <div class="stats">
       <div class="amount">
         <span class="value">{{ water.cups() }}</span>
-        <span class="unit">/{{ water.goal }} cups</span>
+        <span class="unit">/{{ water.goal() }} cups</span>
       </div>
 
       <div class="goal-card">
         <ion-icon name="flag-outline"></ion-icon>
-        <span>Goal: {{ water.goal }} cups · {{ water.percent() }}%</span>
+        <span>Goal: {{ water.goal() }} cups · {{ water.percent() }}%</span>
       </div>
     </div>
 

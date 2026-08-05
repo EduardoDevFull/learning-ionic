@@ -1,4 +1,5 @@
-import { Injectable, computed, signal } from '@angular/core';
+import { Injectable, computed, inject, signal } from '@angular/core';
+import { ProfileService } from './profile.service';
 
 export interface WaterEntry {
   id: number;
@@ -7,7 +8,9 @@ export interface WaterEntry {
 
 @Injectable({ providedIn: 'root' })
 export class WaterService {
-  goal = 8;
+  private profile = inject(ProfileService);
+
+  goal = computed(() => this.profile.dailyGoalCups());
 
   private nextId = 1;
   entries = signal<WaterEntry[]>([]);
@@ -15,14 +18,14 @@ export class WaterService {
   cups = computed(() => this.entries().length);
 
   percent = computed(() =>
-    Math.min(100, Math.round((this.cups() / this.goal) * 100)),
+    Math.min(100, Math.round((this.cups() / this.goal()) * 100)),
   );
 
   // Keeps the sea visible even at 0 cups, like the reference design.
   seaHeight = computed(() => Math.max(14, this.percent()));
 
   addCup() {
-    if (this.cups() >= this.goal) {
+    if (this.cups() >= this.goal()) {
       return;
     }
     this.entries.update((list) => [...list, { id: this.nextId++, time: new Date() }]);
