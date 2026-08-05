@@ -18,7 +18,12 @@
       </div>
     </div>
 
-    <div class="sea" [style.height.%]="water.seaHeight()"></div>
+    <div class="sea" [style.height.%]="water.seaHeight()">
+      <div class="waves">
+        <div class="wave wave-back"></div>
+        <div class="wave wave-front"></div>
+      </div>
+    </div>
 
     <div class="actions">
       <ion-button
