@@ -8,7 +8,7 @@ import {
   IonTabs,
 } from '@ionic/angular/standalone';
 
-import { homeOutline, playCircle, timeOutline, waterOutline } from 'ionicons/icons';
+import { playCircle, timeOutline, waterOutline } from 'ionicons/icons';
 import { addIcons } from 'ionicons';
 
 @Component({
@@ -27,6 +27,6 @@ import { addIcons } from 'ionicons';
 })
 export class TabsNavigationPage {
   constructor() {
-    addIcons({ playCircle, waterOutline, homeOutline, timeOutline });
+    addIcons({ playCircle, waterOutline, timeOutline });
   }
 }

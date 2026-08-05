@@ -9,10 +9,6 @@ export const routes: Routes = [
       ),
     children: [
       {
-        path: 'home',
-        loadComponent: () => import('./home/home.page').then((m) => m.HomePage),
-      },
-      {
         path: 'water',
         loadComponent: () =>
           import('./water/water.page').then((m) => m.WaterPage),
@@ -24,7 +20,7 @@ export const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: 'home',
+        redirectTo: 'water',
         pathMatch: 'full',
       },
     ],
