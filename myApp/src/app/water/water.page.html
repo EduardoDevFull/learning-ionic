@@ -8,24 +8,24 @@
   <div class="page">
     <div class="stats">
       <div class="amount">
-        <span class="value">{{ cups() }}</span>
-        <span class="unit">/{{ goal }} cups</span>
+        <span class="value">{{ water.cups() }}</span>
+        <span class="unit">/{{ water.goal }} cups</span>
       </div>
 
       <div class="goal-card">
         <ion-icon name="flag-outline"></ion-icon>
-        <span>Goal: {{ goal }} cups · {{ percent() }}%</span>
+        <span>Goal: {{ water.goal }} cups · {{ water.percent() }}%</span>
       </div>
     </div>
 
-    <div class="sea" [style.height.%]="seaHeight()"></div>
+    <div class="sea" [style.height.%]="water.seaHeight()"></div>
 
     <div class="actions">
       <ion-button
         expand="block"
         shape="round"
         class="drink-btn"
-        (click)="addCup()"
+        (click)="water.addCup()"
       >
         <ion-icon slot="start" name="add-outline"></ion-icon>
         Drink a cup

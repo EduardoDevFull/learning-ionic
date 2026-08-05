@@ -1,4 +1,4 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import {
   IonHeader,
   IonToolbar,
@@ -9,6 +9,7 @@ import {
 } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { addOutline, flagOutline } from 'ionicons/icons';
+import { WaterService } from '../services/water.service';
 
 @Component({
   selector: 'app-water',
@@ -18,29 +19,7 @@ import { addOutline, flagOutline } from 'ionicons/icons';
   imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonIcon],
 })
 export class WaterPage {
-  goal = 8;
-  cups = signal(0);
-
-  percent = computed(() =>
-    Math.min(100, Math.round((this.cups() / this.goal) * 100)),
-  );
-
-  // Keeps the sea visible even at 0 cups, like the reference design.
-  seaHeight = computed(() => Math.max(14, this.percent()));
-
-  constructor() {
+  constructor(public water: WaterService) {
     addIcons({ addOutline, flagOutline });
-  }
-
-  addCup() {
-    if (this.cups() < this.goal) {
-      this.cups.update((value) => value + 1);
-    }
-  }
-
-  removeCup() {
-    if (this.cups() > 0) {
-      this.cups.update((value) => value - 1);
-    }
   }
 }

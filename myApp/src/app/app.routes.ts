@@ -18,6 +18,11 @@ export const routes: Routes = [
           import('./water/water.page').then((m) => m.WaterPage),
       },
       {
+        path: 'history',
+        loadComponent: () =>
+          import('./history/history.page').then((m) => m.HistoryPage),
+      },
+      {
         path: '',
         redirectTo: 'home',
         pathMatch: 'full',
